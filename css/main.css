@@ -1,0 +1,16 @@
+.main .carousel {
+  position: relative;
+}
+.main .carousel .arrow {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+.main .carousel .arrow-left {
+  position: absolute;
+  top: 100%;
+  left: 2%;
+  z-index: 10;
+}/*# sourceMappingURL=main.css.map */

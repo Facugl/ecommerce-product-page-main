@@ -1,0 +1,11 @@
+@use 'mixfun';
+
+.footer {
+  @include mixfun.flex(flex, row, center, center);
+  margin-top: 5rem;
+
+  &__link {
+    color: var(--orange);
+    font-weight: 700;
+  }
+}

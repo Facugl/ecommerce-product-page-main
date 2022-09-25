@@ -1,0 +1,149 @@
+@use 'mixfun';
+
+.header {
+  @include mixfun.flex(flex, row, space-between, center);
+  padding: 2.4rem;
+  
+  @include mixfun.medium {
+    padding-bottom: 3rem;
+    margin-bottom: 6rem;
+    border-bottom: .1rem solid var(--dark-grayish-blue);
+  }
+
+  @include mixfun.large {
+    max-width: 100rem;
+    margin: 0 auto;
+    // padding-bottom: 3rem;
+    margin-bottom: 6rem;
+    border-bottom: .1rem solid var(--dark-grayish-blue);
+    padding: 2.4rem 0 3rem;
+  }
+
+  &--left, &--right {
+    @include mixfun.flex(flex, row, center, center);
+  }
+
+
+  &__menu {
+    width: 1.6rem;
+    cursor: pointer;
+
+    @include mixfun.medium {
+      display: none;
+    }
+
+    @include mixfun.large {
+      display: none;
+    }
+  }
+
+  &__logo {
+    height: 2.3rem;
+    margin-left: 2.4rem;
+
+    @include mixfun.large {
+      margin-left: 0;
+    }
+  }
+
+  &__nav {
+    display: none;
+    cursor: pointer;
+
+    @include mixfun.medium {
+      display: flex;
+      font-size: 1.6rem;
+      color: var(--dark-grayish-blue);
+
+      .nav__list {
+        @include mixfun.flex(flex, row, center, center);
+        gap: 3rem;
+      }
+
+      .nav__item {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 250%;
+          left: 0;
+          height: .4rem;
+          width: 0;
+          background: transparent;
+          transition: all 0.5 ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+          background: var(--orange);
+        }
+      }
+    }
+
+    @include mixfun.large{
+      display: flex;
+      font-size: 1.6rem;
+      color: var(--dark-grayish-blue);
+
+      .nav__list {
+        @include mixfun.flex(flex, row, center, center);
+        gap: 3rem;
+      }
+
+      .nav__item {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 250%;
+          left: 0;
+          height: .4rem;
+          width: 0;
+          background: transparent;
+          transition: all 0.5 ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+          background: var(--orange);
+        }
+      }
+    }    
+  }
+
+  &__cart {
+    color: var(--dark-grayish-blue);
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__cantidad {
+    border-radius: .7rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--orange);
+    padding: .1rem .6rem;
+    position: absolute;
+    top: -.8rem;
+    left: 1rem;
+    display: none;
+  }
+
+  &__avatar {
+    width: 2.4rem;
+    border: .2rem solid transparent;
+    border-radius: 50%;
+    margin-left: 2.4rem;
+    cursor: pointer;
+
+    @include mixfun.large {
+      width: 5rem;
+    }
+
+    &:hover{
+      border: .2rem solid var(--orange);
+    }
+  }
+}
